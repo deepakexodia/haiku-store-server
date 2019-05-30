@@ -1,0 +1,42 @@
+/* class one */
+
+.subhide {
+  line-height: 35px;
+  word-spacing: 10px;
+}
+
+
+/* class two */
+
+.zoomimage img:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s;
+}
+
+.category-text {
+  position: relative;
+  top: 30px;
+  z-index: 100;
+}
+
+.zoomimage img {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .zoomimage figure {
+    width: 60%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .subhide {
+    display: none;
+  }
+  .zoomimage figure {
+    width: 70%;
+    margin: auto;
+  }
+}
