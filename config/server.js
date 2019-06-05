@@ -7,30 +7,31 @@
 // const dbCred =
 // 	dbUser.length > 0 || dbPass.length > 0 ? `${dbUser}:${dbPass}@` : '';
 
-// const dbUrl = 
+// const dbUrl =
 // 	process.env.DB_URL || `mongodb://${dbCred}${dbHost}:${dbPort}/${dbName}`;
 const dbUrl =
 	process.env.DB_URL ||
-	'mongodb://shashank:g9971441252@ds139341.mlab.com:39341/cart';
+	// 'mongodb://shashank:g9971441252@ds139341.mlab.com:39341/cart';
 	// 'mongodb://shashank:g9971441252@ds155396.mlab.com:55396/tobaniware';
-	// 'mongodb://shashank:g9971441252@ds155606.mlab.com:55606/apatotees';
+	'mongodb://shashank:g9971441252@ds139341.mlab.com:39341/cart';
+
+const serverUrl = process.env.SERVERURL || 'localhost:3001';
+const clientUrl = process.env.CLIENTURL || 'localhost:3000';
 
 module.exports = {
+	apiListenPort: process.env.PORT || 3001,
+	storeListenPort: process.env.PORT || 3000,
 	// used by Store (server side)
-	apiBaseUrl: `http://localhost:3001/api/v1`,
+	apiBaseUrl: `https://${serverUrl}/api/v1`,
 
 	// used by Store (server and client side)
-	ajaxBaseUrl: `http://localhost:3001/ajax`,
+	ajaxBaseUrl: `https://${serverUrl}/ajax`,
 
 	// Access-Control-Allow-Origin
-	storeBaseUrl: `http://localhost:3000`,
+	storeBaseUrl: `https://${clientUrl}`,
 
 	// used by API
 	adminLoginUrl: '/admin/login',
-
-	apiListenPort: 3001,
-	storeListenPort: 3000,
-
 	// used by API
 	mongodbServerUrl: dbUrl,
 
